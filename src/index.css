@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 90% 15%;
+    --primary-foreground: 0 0% 96%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 41 48% 55%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 41 48% 55% / 0.2;
+    --input: 41 48% 55% / 0.2;
+    --ring: 41 48% 55%;
+
+    --radius: 0.25rem;
+
+    --gold: 41 48% 55%;
+    --gold-light: 47 80% 78%;
+    --oxblood: 0 90% 15%;
+    --deep-black: 0 0% 4%;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 41 48% 55%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 41 48% 55% / 0.2;
+    --sidebar-ring: 41 48% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    @apply bg-gradient-to-tr from-accent via-gold-light to-accent;
+  }
+
+  .gold-gradient-text {
+    @apply bg-gradient-to-r from-accent via-gold-light to-accent bg-clip-text text-transparent;
+  }
+
+  .oxblood-card {
+    @apply bg-primary border border-accent/30;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-accent/20;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-6;
+  }
+
+  .luxury-border-l {
+    @apply border-l border-accent/30 pl-6;
+  }
+
+  .gold-pulse {
+    animation: goldPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes goldPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -29,11 +29,19 @@ const Hero = () => {
             transition={{ ...luxuryTransition, delay: 0.3 }}
             className="mb-3 inline-flex items-center"
           >
-            <div className="bg-black/20 backdrop-blur-[2px] border-l-2 border-accent px-3 py-1 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-accent tracking-[0.4em] uppercase text-[10px] md:text-xs font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
-                Sector 48, Gurugram
-              </span>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-4">
+                <div className="h-px w-8 bg-accent/50" />
+                <span className="text-white text-xs md:text-xl uppercase tracking-[0.1em] font-bold whitespace-nowrap">
+                  Divine Days Offer · 20:80 Payment Plan
+                </span>
+              </div>
+              <div className="bg-black/20 backdrop-blur-[2px] border-l-2 border-accent px-3 py-1 flex items-center gap-2 self-start">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="text-accent tracking-[0.4em] uppercase text-[10px] md:text-xs font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+                  Sector 48, Gurugram
+                </span>
+              </div>
             </div>
           </motion.div>
 
@@ -62,17 +70,7 @@ const Hero = () => {
               3 & 4 BHK Ultra Luxury Residences
             </p>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ ...luxuryTransition, delay: 1.2 }}
-              className="mb-6 flex items-center gap-4 lg:flex"
-            >
-              <div className="h-px w-8 bg-accent/50" />
-              <span className="text-accent text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold">
-                Divine Days Offer · 20:80 Payment Plan
-              </span>
-            </motion.div>
+
           </motion.div>
         </div>
 

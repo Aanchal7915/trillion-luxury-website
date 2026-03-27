@@ -36,7 +36,7 @@ const SharedLeadForm = ({ source, buttonText = "Get Investment Details", classNa
       params.append("Message", formData.message || `Enquiry from ${source}`);
       params.append("Source", source);
 
-      await fetch(`${scriptURL}?${params.toString()}`, { 
+      fetch(`${scriptURL}?${params.toString()}`, { 
         method: 'GET',
         mode: 'no-cors'
       });
@@ -45,7 +45,6 @@ const SharedLeadForm = ({ source, buttonText = "Get Investment Details", classNa
       navigate("/thank-you");
     } catch (error) {
       console.error('Submission error:', error);
-      setStatus("sent"); 
       navigate("/thank-you");
     }
   };

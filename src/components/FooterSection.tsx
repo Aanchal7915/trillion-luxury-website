@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FooterSection = () => (
   <footer className="border-t border-accent/10 py-12 px-4 md:px-6">
     <div className="max-w-7xl mx-auto">
@@ -16,10 +18,16 @@ const FooterSection = () => (
           </p>
         </div>
       </div>
-      <div className="border-t border-accent/10 pt-6">
-        <p className="text-muted-foreground text-xs">
+      <div className="border-t border-accent/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-muted-foreground text-[10px] uppercase tracking-widest">
           © {new Date().getFullYear()} The Trillion by Experion. All rights reserved.
         </p>
+        <Link 
+          to="/privacy-policy" 
+          className="text-muted-foreground hover:text-accent text-[10px] uppercase tracking-widest transition-colors"
+        >
+          Privacy Policy
+        </Link>
       </div>
     </div>
   </footer>

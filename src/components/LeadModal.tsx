@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface LeadModalProps {
   delay?: number;
 }
 
 const LeadModal = ({ delay = 3000 }: LeadModalProps) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -53,9 +55,13 @@ const LeadModal = ({ delay = 3000 }: LeadModalProps) => {
       });
       
       setStatus("sent");
+      setIsOpen(false);
+      navigate("/thank-you?type=register");
     } catch (error) {
       console.error('Submission error:', error);
       setStatus("sent");
+      setIsOpen(false);
+      navigate("/thank-you?type=register");
     }
   };
 

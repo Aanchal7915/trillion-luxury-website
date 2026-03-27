@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const luxuryTransition = { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const };
 
 const HeroLeadForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -35,9 +37,11 @@ const HeroLeadForm = () => {
       });
       
       setStatus("sent");
+      navigate("/thank-you?type=enquiry");
     } catch (error) {
       console.error('Submission error:', error);
       setStatus("sent");
+      navigate("/thank-you?type=enquiry");
     }
   };
 

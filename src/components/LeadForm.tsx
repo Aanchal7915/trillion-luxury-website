@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const luxuryTransition = { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const };
 
 const LeadForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -38,9 +40,11 @@ const LeadForm = () => {
       });
       
       setStatus("sent");
+      navigate("/thank-you?type=enquiry");
     } catch (error) {
       console.error('Submission error:', error);
       setStatus("sent"); // Still show success to user for better UX
+      navigate("/thank-you?type=enquiry");
     }
   };
 

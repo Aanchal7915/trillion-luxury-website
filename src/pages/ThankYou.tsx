@@ -1,17 +1,9 @@
 import { motion } from "framer-motion";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CheckCircle2, MessageSquare } from "lucide-react";
 
 const ThankYou = () => {
-  const [searchParams] = useSearchParams();
-  const type = searchParams.get("type");
   const luxuryTransition = { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const };
-
-  const getHeadingText = () => {
-    if (type === "register") return "Thank You For Registering";
-    if (type === "enquiry") return "Thank You For Your Enquiry";
-    return "Thank You";
-  };
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4 relative overflow-hidden text-white">
@@ -56,7 +48,7 @@ const ThankYou = () => {
             transition={{ ...luxuryTransition, delay: 0.5 }}
             className="font-serif text-4xl md:text-5xl text-foreground mb-6"
           >
-            {getHeadingText()}
+            Thank You
           </motion.h2>
 
           <motion.p 
